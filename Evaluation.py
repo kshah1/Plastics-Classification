@@ -65,10 +65,10 @@ def main(argv):
     dL, imageFolder = loadData(root=dataroot, batch_size=batch_size, image_size=image_size)
 
     # Load the models
-    m_resnet18 = torch.load("models/m_resnet18.pth")
-    m_resnet34 = torch.load("models/m_resnet34.pth")
-    m_resnet50 = torch.load("models/m_resnet50.pth")
-    m_densenet121 = torch.load("models/m_densenet121.pth")
+    m_resnet18 = torch.load("newmodels/m_resnet18.pth")
+    m_resnet34 = torch.load("newmodels/m_resnet34.pth")
+    m_resnet50 = torch.load("newmodels/m_resnet50.pth")
+    m_densenet121 = torch.load("newmodels/m_densenet121.pth")
 
     # Build list of models
     models = [m_resnet18, m_resnet34, m_resnet50, m_densenet121]

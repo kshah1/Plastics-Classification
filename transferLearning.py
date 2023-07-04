@@ -1,5 +1,5 @@
 # Karan Shah 
-# Transfer Learning Applied to Plastics Classification
+# Transfer Learning applied to Plastics Classification
 
 # Import statements
 import sys
@@ -199,7 +199,6 @@ def plotLosses(num_epochs, train_losses, test_losses, save_path=None):
         print(f"Figure saved at {save_path}")
     else:
         plt.show()
-
 
 
 # Visualize model performance on set of validation images
