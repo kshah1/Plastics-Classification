@@ -274,7 +274,7 @@ def main(argv):
     device = "cpu"
 
 
-    # Root directory for dataset
+    # Root directory for dataset 
     dataroot = "/Users/karanshah/Spring2023/CV/Karan/FinalProject/trainValTest"
 
     # Load the data
@@ -354,7 +354,7 @@ def main(argv):
     m_densenet121, densenet121Acc, densenet121TrainL, densenet121TestL = train_model(model=densenet121, dataloaders=dL, imageFolders=imageFolder, device=device, criterion=criterion, optimizer=optimizer_conv_dense121, scheduler=optimizer_conv_dense121, num_epochs=num_epochs)
 
     # Create directory and plot the losses
-    os.makedirs("figures")
+    os.makedirs("figures", exist_ok=True)
     plotLosses(num_epochs, resnet18TrainL, resnet18TestL, save_path="figures/resnet18.png")
     plotLosses(num_epochs, resnet34TrainL, resnet34TestL, save_path="figures/resnet34.png")
     plotLosses(num_epochs, resnet50TrainL, resnet50TestL, save_path="figures/resnet50.png")
@@ -377,8 +377,6 @@ def main(argv):
         best_model = m_densenet121
         best_model_name = "Densenet121"
 
-    # best_model = torch.load("models/m_resnet18.pth")
-    # best_model_name = "resnet18"
 
     # Obtain the test accuracy
     testAccuracy = testPerformance(best_model, dL, device)
